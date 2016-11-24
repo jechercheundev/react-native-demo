@@ -1,6 +1,5 @@
 import { connect } from 'react-redux'
 import KerKer from './KerKer'
-import '../redux/store.js'
 import {incrementKerker} from '../redux/actions/kerkerActions.js'
 
 const getKerkerTime = (stateKerkerTime) => {
