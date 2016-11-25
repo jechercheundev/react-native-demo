@@ -156,6 +156,10 @@ asn1@~0.2.3:
   version "0.2.3"
   resolved "https://registry.yarnpkg.com/asn1/-/asn1-0.2.3.tgz#dac8787713c9966849fc8180777ebe9c1ddf3b86"
 
+aspect-js@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/aspect-js/-/aspect-js-1.0.3.tgz#3eb5ab3226f340f89bc1e425fa105eea1450e18d"
+
 assert-plus@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/assert-plus/-/assert-plus-0.2.0.tgz#d74e1b87e7affc0db8aadb7021f3fe48101ab234"
@@ -3788,6 +3792,13 @@ react-deep-force-update@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/react-deep-force-update/-/react-deep-force-update-1.0.1.tgz#f911b5be1d2a6fe387507dd6e9a767aa2924b4c7"
 
+react-native-simple-router@^0.12.0:
+  version "0.12.0"
+  resolved "https://registry.yarnpkg.com/react-native-simple-router/-/react-native-simple-router-0.12.0.tgz#eb11d49771ffc9f08f61bbbbd218e58e5086fc3a"
+  dependencies:
+    aspect-js "^1.0.3"
+    underscore "^1.8.3"
+
 react-native@0.37.0:
   version "0.37.0"
   resolved "https://registry.yarnpkg.com/react-native/-/react-native-0.37.0.tgz#d871c752b4d87e46b569fd8be2921d4f9248c87d"
@@ -4668,6 +4679,10 @@ underscore.string@^3.0.3:
     sprintf-js "^1.0.3"
     util-deprecate "^1.0.2"
 
+underscore@^1.8.3:
+  version "1.8.3"
+  resolved "https://registry.yarnpkg.com/underscore/-/underscore-1.8.3.tgz#4f3fb53b106e6097fcf9cb4109f2a5e9bdfa5022"
+
 unique-stream@^2.0.2:
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/unique-stream/-/unique-stream-2.2.1.tgz#5aa003cfbe94c5ff866c4e7d668bb1c4dbadb369"
@@ -4837,13 +4852,13 @@ whatwg-encoding@^1.0.1:
   dependencies:
     iconv-lite "0.4.13"
 
-whatwg-fetch@>=0.10.0, whatwg-fetch@^1.0.0:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/whatwg-fetch/-/whatwg-fetch-1.1.1.tgz#ac3c9d39f320c6dce5339969d054ef43dd333319"
-
-whatwg-fetch@^2.0.1:
+whatwg-fetch@>=0.10.0, whatwg-fetch@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/whatwg-fetch/-/whatwg-fetch-2.0.1.tgz#078b9461bbe91cea73cbce8bb122a05f9e92b772"
+
+whatwg-fetch@^1.0.0:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/whatwg-fetch/-/whatwg-fetch-1.1.1.tgz#ac3c9d39f320c6dce5339969d054ef43dd333319"
 
 whatwg-url@^3.0.0:
   version "3.0.0"

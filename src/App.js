@@ -2,24 +2,35 @@ import {
   AppRegistry,
   Text,
   View,
+  StyleSheet,
   Navigator
 } from 'react-native';
 import React, { Component } from 'react'
 import { Provider } from 'react-redux'
 import store from './redux/store.js'
-import router from './Router.js'
+import HomeScene from './scenes/HomeScene.js'
+import Router from 'react-native-simple-router';
 
+const firstRoute = {
+  name: 'Welcome !',
+  component: HomeScene,
+};
 
-import KerKerContainer from './components/KerKerContainer.js'
+const styles = StyleSheet.create({
+  header: {
+    backgroundColor: '#5cafec',
+  },
+});
+
 
 class App extends Component {
 
   render() {
     return (
       <Provider store={store}>
-        <Navigator
-          initialRoute={router.initialState}
-          renderScene={router.renderScene}
+        <Router
+          firstRoute={firstRoute}
+          headerStyle={styles.header}
         />
       </Provider>
     );
