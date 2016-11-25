@@ -7,6 +7,7 @@ import {
 } from 'react-native';
 import KerKerContainer from '../components/KerKerContainer.js';
 import NextScene from './NextScene.js'
+import I18n from '../i18n/I18n.config.js'
 
 export default class HomeScene extends Component {
 
@@ -27,14 +28,15 @@ export default class HomeScene extends Component {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          Welcome to React Native!
+          {I18n.t('home_welcome')}
         </Text>
         <KerKerContainer/>
         <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
+          {I18n.t('home_instruction_one')}
+          {'\n'}
+          {I18n.t('home_instruction_two')}
         </Text>
-        <Button title="Next" onPress={ this.nextPage }/>
+        <Button title={I18n.t('router_next')}  onPress={ this.nextPage }/>
       </View>
     )
   }
