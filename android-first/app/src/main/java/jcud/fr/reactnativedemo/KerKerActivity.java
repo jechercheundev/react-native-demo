@@ -1,50 +1,16 @@
-# From Zero to Hero !
+package jcud.fr.reactnativedemo;
 
-Add react-native to your project
 
-```
-yarn init
-yarn add react-native
-yarn add react
-curl -o .flowconfig https://raw.githubusercontent.com/facebook/react-native/master/.flowconfig
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.KeyEvent;
 
-```
+import com.facebook.react.ReactInstanceManager;
+import com.facebook.react.ReactRootView;
+import com.facebook.react.common.LifecycleState;
+import com.facebook.react.modules.core.DefaultHardwareBackBtnHandler;
+import com.facebook.react.shell.MainReactPackage;
 
-Now open the newly created package.json file and add this under scripts:
-`"start": "node node_modules/react-native/local-cli/cli.js start"`
-
-In your project's build.gradle file add an entry for the local React Native maven directory:
-```
-allprojects {
-    repositories {
-        maven {
-            // All of React Native (JS, Android binaries) is installed from npm
-            url "$rootDir/node_modules/react-native/android"
-        }
-    }
-}
-```
-
-In your app's build.gradle file add the React Native dependency:
-```
-dependencies {
-    compile "com.facebook.react:react-native:0.41.2" // From node_modules.
-    // forcer la version c'est bien !
-}
-```
-
-## Ajouter une Activity ReactNative
-You need to add a normal activity and force `Theme.AppCompat.Light.NoActionBar` as a Theme because some component relies on it.
-```
-<activity android:name=".KerKerActivity"
-                  android:label="@string/app_name"
-                  android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
-```
-
-Your activity should build and hook a ReactInstanceManager.
-Hook all the lifecycle methods, back buttons and the dev menu
-
-```
 public class KerKerActivity extends Activity implements DefaultHardwareBackBtnHandler {
     private ReactRootView mReactRootView;
     private ReactInstanceManager mReactInstanceManager;
@@ -117,4 +83,3 @@ public class KerKerActivity extends Activity implements DefaultHardwareBackBtnHa
         return super.onKeyUp(keyCode, event);
     }
 }
-```

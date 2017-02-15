@@ -29,5 +29,5 @@ dependencies {
     })
     compile 'com.android.support:appcompat-v7:25.0.0'
     testCompile 'junit:junit:4.12'
-    compile "com.facebook.react:react-native:+" // From node_modules.
+    compile "com.facebook.react:react-native:0.41.2" // From node_modules.
 }
