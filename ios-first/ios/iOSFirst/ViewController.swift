@@ -22,7 +22,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func onTouchUpInside(_ sender: Any) {
-        
+        KerKerNative.increment()
     }
 
     func reactOutput(_ notification : NSNotification) {

@@ -4,6 +4,7 @@ import {
   Text,
   Button,
   View,
+  NativeEventEmitter,
   NativeModules
 } from 'react-native';
 const { KerKerNative } = NativeModules;
@@ -11,7 +12,17 @@ const { KerKerNative } = NativeModules;
 
 class KerKer extends React.Component {
 
+  componentWillMount() {
+    this.KerKerNativeEmitter = new NativeEventEmitter(KerKerNative);
+    this.subscription = this.KerKerNativeEmitter.addListener(
+      'KerKerIncrement',
+      () => this.props.onKerKerPress()
+    );
+  }
 
+  componentWillUnmount() {
+    this.subscription.remove();
+  }
 
   render() {
     console.log('kerker render - kerkerTime = ' + this.props.kerkerTime)

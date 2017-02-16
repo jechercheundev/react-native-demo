@@ -13,7 +13,6 @@ const { KerKerNative } = NativeModules;
 class KerKer extends React.Component {
 
   componentWillMount() {
-    console.log("ici")
     this.KerKerNativeEmitter = new NativeEventEmitter(KerKerNative);
     this.subscription = this.KerKerNativeEmitter.addListener(
       'EventKerKer',
