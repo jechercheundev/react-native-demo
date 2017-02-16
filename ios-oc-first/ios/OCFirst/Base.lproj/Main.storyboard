@@ -22,32 +22,67 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SAP-0p-2Ir">
-                                <rect key="frame" x="16" y="20" width="343" height="200"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="zxM-qu-aQc"/>
-                                </constraints>
-                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NlA-e4-F8u">
-                                <rect key="frame" x="133" y="284" width="108" height="30"/>
+                                <rect key="frame" x="133" y="337" width="108" height="30"/>
                                 <state key="normal" title="BOUTON NATIF"/>
                                 <connections>
                                     <action selector="onToucheLeBoutton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2au-Ea-ZyG"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SAP-0p-2Ir">
+                                <rect key="frame" x="16" y="70" width="343" height="200"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="zxM-qu-aQc"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="React Native Below" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SdO-Rv-gP0">
+                                <rect key="frame" x="16" y="28" width="148" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iOS Below" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zOQ-4O-qKn">
+                                <rect key="frame" x="16" y="290" width="78" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="2gE-Ya-I3W">
+                                <rect key="frame" x="32" y="422" width="327" height="245"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="React Native Output" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MXn-Pe-VLH">
+                                <rect key="frame" x="16" y="381" width="155" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="NlA-e4-F8u" firstAttribute="top" secondItem="SAP-0p-2Ir" secondAttribute="bottom" constant="64" id="2zf-s2-EAw"/>
                             <constraint firstItem="SAP-0p-2Ir" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="30s-oX-Fc1"/>
+                            <constraint firstItem="zOQ-4O-qKn" firstAttribute="top" secondItem="SAP-0p-2Ir" secondAttribute="bottom" constant="20" id="4if-If-npH"/>
+                            <constraint firstItem="MXn-Pe-VLH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="6Kb-Gn-wxt"/>
                             <constraint firstItem="SAP-0p-2Ir" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="CIf-1h-1VK"/>
                             <constraint firstItem="NlA-e4-F8u" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DYt-72-FDP"/>
-                            <constraint firstItem="SAP-0p-2Ir" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="vaQ-T4-kjf"/>
+                            <constraint firstItem="SAP-0p-2Ir" firstAttribute="top" secondItem="SdO-Rv-gP0" secondAttribute="bottom" constant="21" id="Haf-YH-fxJ"/>
+                            <constraint firstItem="SdO-Rv-gP0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="NdS-NF-yWU"/>
+                            <constraint firstItem="MXn-Pe-VLH" firstAttribute="top" secondItem="NlA-e4-F8u" secondAttribute="bottom" constant="14" id="WWM-OD-KMh"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="2gE-Ya-I3W" secondAttribute="bottom" id="XLg-Ca-tXC"/>
+                            <constraint firstItem="2gE-Ya-I3W" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="jKd-OZ-6DO"/>
+                            <constraint firstItem="SdO-Rv-gP0" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="p8c-TU-fzQ"/>
+                            <constraint firstItem="zOQ-4O-qKn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="qoq-Le-VCi"/>
+                            <constraint firstItem="2gE-Ya-I3W" firstAttribute="top" secondItem="MXn-Pe-VLH" secondAttribute="bottom" constant="20" id="unz-7g-cED"/>
+                            <constraint firstItem="2gE-Ya-I3W" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="16" id="w0k-wy-56p"/>
+                            <constraint firstItem="NlA-e4-F8u" firstAttribute="top" secondItem="zOQ-4O-qKn" secondAttribute="bottom" constant="26" id="ypv-1T-o19"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="moustache" destination="SAP-0p-2Ir" id="a2w-Kv-Nu3"/>
+                        <outlet property="outputField" destination="2gE-Ya-I3W" id="Ry1-zJ-Edt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

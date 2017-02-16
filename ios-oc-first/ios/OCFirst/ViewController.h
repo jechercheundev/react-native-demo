@@ -11,6 +11,7 @@
 @interface ViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UIView *moustache;
+@property (weak, nonatomic) IBOutlet UITextView *outputField;
 
 @end
 

@@ -14,12 +14,26 @@
 
 @end
 
+NSString *const KerKerOutputReceive = @"KerKerOutput";
+
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     [self renderReact];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(outputFromReact:)
+                                                 name:KerKerOutputReceive
+                                               object:nil];
+    
+}
+
+-(void)outputFromReact:(NSNotification*)notification {
+    NSString* message = notification.userInfo[@"message"];
+    [self.outputField setText:[NSString stringWithFormat:@"%@\n%@", self.outputField.text, message]];
+    
 }
 
 - (IBAction)onToucheLeBoutton:(id)sender {
