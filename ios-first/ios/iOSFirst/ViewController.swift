@@ -18,12 +18,19 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         renderReact()
+        NotificationCenter.default.addObserver(self, selector: #selector(self.reactOutput(_:)), name: NSNotification.Name(rawValue: "KerKerNativeOutput"), object: nil);
     }
     
     @IBAction func onTouchUpInside(_ sender: Any) {
         
     }
 
+    func reactOutput(_ notification : NSNotification) {
+        let message = notification.userInfo?["message"] as! String;
+        self.outputTextView.text = self.outputTextView.text + "\n" +  message
+    }
+    
+    
     
     func renderReact() {
         

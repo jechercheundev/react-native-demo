@@ -13,7 +13,13 @@ class KerKerNative: NSObject {
     
     @objc(output:)
     func output(message: String) -> Void {
-        
+        DispatchQueue.main.async {
+            NotificationCenter.default.post(
+                name: NSNotification.Name.init(rawValue: "KerKerNativeOutput"),
+                object: self,
+                userInfo: ["message":message]
+            )
+        }
     }
     
 }
