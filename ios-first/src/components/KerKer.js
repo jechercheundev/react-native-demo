@@ -3,8 +3,10 @@ import {
   StyleSheet,
   Text,
   Button,
-  View
+  View,
+  NativeModules
 } from 'react-native';
+const { KerKerNative } = NativeModules;
 
 
 class KerKer extends React.Component {
@@ -24,6 +26,7 @@ class KerKer extends React.Component {
       <View >
         <Text onPress = {() => {
             console.log('press')
+            KerKerNative.output('kerker number is : ' + kerker)
             this.props.onKerKerPress()
           }} >
           #Kerker { kerker }

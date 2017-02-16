@@ -12,6 +12,8 @@
 		B3A613BC1E5572B0007F86DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3A613BA1E5572B0007F86DC /* Main.storyboard */; };
 		B3A613BE1E5572B0007F86DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3A613BD1E5572B0007F86DC /* Assets.xcassets */; };
 		B3A613C11E5572B0007F86DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3A613BF1E5572B0007F86DC /* LaunchScreen.storyboard */; };
+		B3CED0721E56440700AFD552 /* KerKerNative.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CED0711E56440700AFD552 /* KerKerNative.swift */; };
+		B3CED0761E56448800AFD552 /* KerKerNativeBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CED0751E56448800AFD552 /* KerKerNativeBridge.m */; };
 		C2CB725A0495B8C7B5BD200E /* Pods_iOSFirst.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 029EBBB65C15788D1B2D2E79 /* Pods_iOSFirst.framework */; };
 /* End PBXBuildFile section */
 
@@ -24,6 +26,10 @@
 		B3A613BD1E5572B0007F86DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B3A613C01E5572B0007F86DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B3A613C21E5572B0007F86DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B3CED0711E56440700AFD552 /* KerKerNative.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KerKerNative.swift; sourceTree = "<group>"; };
+		B3CED0731E56447100AFD552 /* KerKerNativeBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KerKerNativeBridge.h; sourceTree = "<group>"; };
+		B3CED0741E56448800AFD552 /* iOSFirst-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iOSFirst-Bridging-Header.h"; sourceTree = "<group>"; };
+		B3CED0751E56448800AFD552 /* KerKerNativeBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KerKerNativeBridge.m; sourceTree = "<group>"; };
 		E382DEEE85441AB1C78EA5CE /* Pods-iOSFirst.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSFirst.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOSFirst/Pods-iOSFirst.debug.xcconfig"; sourceTree = "<group>"; };
 		EC015843B1411298A85F469C /* Pods-iOSFirst.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSFirst.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOSFirst/Pods-iOSFirst.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -67,6 +73,10 @@
 				B3A613BD1E5572B0007F86DC /* Assets.xcassets */,
 				B3A613BF1E5572B0007F86DC /* LaunchScreen.storyboard */,
 				B3A613C21E5572B0007F86DC /* Info.plist */,
+				B3CED0711E56440700AFD552 /* KerKerNative.swift */,
+				B3CED0731E56447100AFD552 /* KerKerNativeBridge.h */,
+				B3CED0751E56448800AFD552 /* KerKerNativeBridge.m */,
+				B3CED0741E56448800AFD552 /* iOSFirst-Bridging-Header.h */,
 			);
 			path = iOSFirst;
 			sourceTree = "<group>";
@@ -124,6 +134,7 @@
 					B3A613B21E5572AF007F86DC = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 76HWTV64YV;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -213,7 +224,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3A613B91E5572B0007F86DC /* ViewController.swift in Sources */,
+				B3CED0721E56440700AFD552 /* KerKerNative.swift in Sources */,
 				B3A613B71E5572B0007F86DC /* AppDelegate.swift in Sources */,
+				B3CED0761E56448800AFD552 /* KerKerNativeBridge.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,11 +350,14 @@
 			baseConfigurationReference = E382DEEE85441AB1C78EA5CE /* Pods-iOSFirst.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 76HWTV64YV;
 				INFOPLIST_FILE = iOSFirst/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "fr.jcud.react-native-demo.iOSFirst";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "iOSFirst/iOSFirst-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -351,11 +367,13 @@
 			baseConfigurationReference = EC015843B1411298A85F469C /* Pods-iOSFirst.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 76HWTV64YV;
 				INFOPLIST_FILE = iOSFirst/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "fr.jcud.react-native-demo.iOSFirst";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "iOSFirst/iOSFirst-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
