@@ -61,7 +61,7 @@ NSString *const KerKerOutputReceive = @"KerKerOutput";
        }
                           launchOptions    : nil];
     
-    rootView.frame = CGRectMake(0, 0, 320, 240);
+    rootView.frame = CGRectMake(0, 0, self.moustache.frame.size.width, self.moustache.frame.size.height);
     [self.moustache addSubview:rootView];
     
 }

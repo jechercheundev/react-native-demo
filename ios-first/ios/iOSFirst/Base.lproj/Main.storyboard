@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,18 +22,59 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NUq-Wi-so5">
-                                <rect key="frame" x="131.5" y="318" width="111" height="30"/>
-                                <state key="normal" title="Enter the Kerker"/>
-                                <connections>
-                                    <action selector="kerkerButtonTappedWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iee-Pe-fXh"/>
-                                </connections>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r07-4n-gvL">
+                                <rect key="frame" x="133" y="323" width="108" height="30"/>
+                                <state key="normal" title="BOUTON NATIF"/>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p7U-EN-NWX">
+                                <rect key="frame" x="16" y="56" width="343" height="200"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="T6F-sr-4ja"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="React Native Below" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SUf-Qj-V9J">
+                                <rect key="frame" x="16" y="14" width="148" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iOS Below" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="09l-ze-tSw">
+                                <rect key="frame" x="16" y="276" width="78" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="MG9-kE-lBT">
+                                <rect key="frame" x="16" y="408" width="343" height="259"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="React Native Output" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s9b-OZ-zVP">
+                                <rect key="frame" x="16" y="367" width="155" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="NUq-Wi-so5" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="V5b-uy-0JD"/>
-                            <constraint firstItem="NUq-Wi-so5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rQz-MC-2TM"/>
+                            <constraint firstItem="09l-ze-tSw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="CXj-66-ei4"/>
+                            <constraint firstItem="SUf-Qj-V9J" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="14" id="D59-pr-oFc"/>
+                            <constraint firstItem="s9b-OZ-zVP" firstAttribute="top" secondItem="r07-4n-gvL" secondAttribute="bottom" constant="14" id="DnV-L3-hfQ"/>
+                            <constraint firstItem="p7U-EN-NWX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="FDy-Qj-NvW"/>
+                            <constraint firstItem="r07-4n-gvL" firstAttribute="top" secondItem="09l-ze-tSw" secondAttribute="bottom" constant="26" id="OAY-qf-0v8"/>
+                            <constraint firstItem="p7U-EN-NWX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="OQB-J2-1am"/>
+                            <constraint firstItem="p7U-EN-NWX" firstAttribute="top" secondItem="SUf-Qj-V9J" secondAttribute="bottom" constant="21" id="P82-j5-VG0"/>
+                            <constraint firstItem="s9b-OZ-zVP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="QVg-Uh-joM"/>
+                            <constraint firstItem="SUf-Qj-V9J" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="TRB-KD-Iug"/>
+                            <constraint firstItem="MG9-kE-lBT" firstAttribute="top" secondItem="s9b-OZ-zVP" secondAttribute="bottom" constant="20" id="Xc0-uW-I2x"/>
+                            <constraint firstItem="09l-ze-tSw" firstAttribute="top" secondItem="p7U-EN-NWX" secondAttribute="bottom" constant="20" id="ehK-fc-egO"/>
+                            <constraint firstItem="MG9-kE-lBT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fgV-ZQ-FYS"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="MG9-kE-lBT" secondAttribute="bottom" id="pM7-QU-mc1"/>
+                            <constraint firstItem="r07-4n-gvL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="voU-Pa-pyO"/>
+                            <constraint firstItem="MG9-kE-lBT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="zfz-qc-pMj"/>
                         </constraints>
                     </view>
                 </viewController>
