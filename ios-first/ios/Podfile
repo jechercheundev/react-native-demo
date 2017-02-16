@@ -12,10 +12,17 @@ target 'iOSFirst' do
   # but if not, adjust the `:path` accordingly
   pod 'React', :path => '../node_modules/react-native', :subspecs => [
     'Core',
+    'RCTLinkingIOS',
     'RCTText',
+    'RCTImage',
     'RCTNetwork',
+    'RCTAnimation',
     'RCTWebSocket', # needed for debugging
     # Add any other subspecs you want to use in your project
   ]
+
+
+  yoga_path = File.join('../node_modules/react-native', 'ReactCommon/yoga')
+  pod 'Yoga', :path => yoga_path
 
 end
