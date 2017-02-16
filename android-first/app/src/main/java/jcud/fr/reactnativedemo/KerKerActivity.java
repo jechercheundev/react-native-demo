@@ -27,13 +27,13 @@ public class KerKerActivity extends Activity implements DefaultHardwareBackBtnHa
         mReactRootView = new ReactRootView(this);
         mReactInstanceManager = ReactInstanceManager.builder()
                 .setApplication(getApplication())
-                .setBundleAssetName("index.android.bundle")
-                .setJSMainModuleName("index.android")
+                .setBundleAssetName("demo-index.android.bundle")
+                .setJSMainModuleName("demo-index.android")
                 .addPackage(new MainReactPackage())
                 .setUseDeveloperSupport(BuildConfig.DEBUG)
                 .setInitialLifecycleState(LifecycleState.RESUMED)
                 .build();
-        mReactRootView.startReactApplication(mReactInstanceManager, "HelloWorld", null);
+        mReactRootView.startReactApplication(mReactInstanceManager, "demo", null);
 
         setContentView(mReactRootView);
 

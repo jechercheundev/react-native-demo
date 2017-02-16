@@ -15,4 +15,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Hello World!"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter the KerKer"
+        android:layout_centerInParent="true"
+        android:backgroundTint="@color/colorPrimary"
+        android:textColor="@android:color/white"
+        android:id="@+id/enterTheKerKer"
+        />
 </RelativeLayout>

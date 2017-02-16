@@ -161,3 +161,25 @@ public class KerKerActivity extends Activity implements DefaultHardwareBackBtnHa
 }
 
 ```
+
+Maker sure you have watchman installed
+```
+~/Dev/Projects/react-native-demo/android-first on master*
+$ watchman
+{
+    "error": "invalid command (expected an array with some elements!)",
+    "cli_validated": true,
+    "version": "4.7.0"
+}
+```
+
+Eventually, install it : `brew install watchman` 
+
+Make sure reverse tcp is configured on ADB `adb reverse tcp:8081 tcp:8081`
+
+Then start the packager :
+```
+npm start
+```
+
+And build/run from Android Studio
