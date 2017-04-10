@@ -14,8 +14,20 @@ export default class HomeScene extends Component {
   constructor() {
     super();
     this.nextPage = this.nextPage.bind(this)
+    this.handleErrorMessage = this.handleErrorMessage.bind(this)
   }
 
+  handleErrorMessage() {
+    const isVisible = this.props.errors.isVisible
+    if(isVisible) {
+      return (
+        <Text>
+          {this.props.errors.message}
+        </Text>
+      )
+    }
+    return null;
+  }
 
   nextPage() {
      this.props.toRoute({
@@ -25,17 +37,21 @@ export default class HomeScene extends Component {
    }
 
   render() {
+    let erroMessage = this.handleErrorMessage()
+
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
           {I18n.t('home_welcome')}
         </Text>
+        {erroMessage}
         <KerKerContainer/>
         <Text style={styles.instructions}>
           {I18n.t('home_instruction_one')}
           {'\n'}
           {I18n.t('home_instruction_two')}
         </Text>
+        <Button title="ERREUR" onPress={ this.props.showError } />
         <Button title={I18n.t('router_next')}  onPress={ this.nextPage }/>
       </View>
     )

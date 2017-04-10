@@ -27,8 +27,8 @@ public class KerKerActivity extends Activity implements DefaultHardwareBackBtnHa
         mReactRootView = new ReactRootView(this);
         mReactInstanceManager = ReactInstanceManager.builder()
                 .setApplication(getApplication())
-                .setBundleAssetName("demo-index.android.bundle")
-                .setJSMainModuleName("demo-index.android")
+                .setBundleAssetName("src-react-native/demo-index.android.bundle")
+                .setJSMainModuleName("src-react-native/demo-index.android")
                 .addPackage(new MainReactPackage())
                 .setUseDeveloperSupport(BuildConfig.DEBUG)
                 .setInitialLifecycleState(LifecycleState.RESUMED)

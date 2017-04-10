@@ -12,6 +12,12 @@ const { KerKerNative } = NativeModules;
 
 class KerKer extends React.Component {
 
+  constructor() {
+    super()
+    
+  }
+
+
   componentWillMount() {
     this.KerKerNativeEmitter = new NativeEventEmitter(KerKerNative);
     this.subscription = this.KerKerNativeEmitter.addListener(
@@ -20,6 +26,7 @@ class KerKer extends React.Component {
     );
 
   }
+
 
   componentWillUnmount() {
     this.subscription.remove();

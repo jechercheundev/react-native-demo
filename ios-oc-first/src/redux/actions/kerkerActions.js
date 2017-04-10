@@ -5,3 +5,14 @@ export const incrementKerker = () => {
     type: INCREMENT_KERKER
   }
 }
+
+
+export const SHOW_ERROR_MESSAGE = 'SHOW_ERROR_MESSAGE'
+
+export const showErrorMessage = (message) => {
+  console.log("showErrorMessage")
+  return {
+    type : SHOW_ERROR_MESSAGE,
+    message : message
+  }
+}
