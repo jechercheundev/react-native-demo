@@ -173,7 +173,7 @@ $ watchman
 }
 ```
 
-Eventually, install it : `brew install watchman` 
+Eventually, install it : `brew install watchman`
 
 Make sure reverse tcp is configured on ADB `adb reverse tcp:8081 tcp:8081`
 
@@ -183,3 +183,9 @@ npm start
 ```
 
 And build/run from Android Studio
+
+## Release
+
+```
+react-native bundle --platform android --dev false --entry-file src-react-native/demo-index.android.js --bundle-output app/src/main/assets/demo-index.android.bundle --assets-dest app/src/main/res/
+```
