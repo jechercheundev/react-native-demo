@@ -1,4 +1,4 @@
-package jcud.fr.reactnativedemo;
+package jcud.fr.reactnativedemo.awesomepackage;
 
 
 import android.widget.Toast;

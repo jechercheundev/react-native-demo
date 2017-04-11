@@ -8,4 +8,11 @@
  *    ToastAndroid.LONG
  */
 import { NativeModules } from 'react-native';
+
+console.log("NativeModules Toast")
+console.log(NativeModules)
+console.log(NativeModules.ToastAndroid)
+console.log(NativeModules.MixiModule)
+
+
 module.exports = NativeModules.ToastAndroid;

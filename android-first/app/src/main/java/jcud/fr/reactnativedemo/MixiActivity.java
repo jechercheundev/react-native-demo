@@ -6,24 +6,21 @@ import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.DisplayMetrics;
 import android.view.KeyEvent;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
 import com.facebook.react.ReactInstanceManager;
-import com.facebook.react.ReactPackage;
 import com.facebook.react.ReactRootView;
 import com.facebook.react.common.LifecycleState;
 import com.facebook.react.modules.core.DefaultHardwareBackBtnHandler;
+import com.facebook.react.modules.core.DeviceEventManagerModule;
 import com.facebook.react.shell.MainReactPackage;
 
-import java.util.Arrays;
-import java.util.List;
+import jcud.fr.reactnativedemo.mixipackage.MixiModule;
+import jcud.fr.reactnativedemo.mixipackage.MixiPackage;
 
 public class MixiActivity extends AppCompatActivity implements DefaultHardwareBackBtnHandler {
     private static final int OVERLAY_PERMISSION_REQ_CODE = 1337;
@@ -44,8 +41,7 @@ public class MixiActivity extends AppCompatActivity implements DefaultHardwareBa
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "On va mettre une vrai action là", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                sendKerkerEvent();
             }
         });
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -56,6 +52,7 @@ public class MixiActivity extends AppCompatActivity implements DefaultHardwareBa
                 .setBundleAssetName("demo-index.android.bundle")
                 .setJSMainModuleName("src-react-native/demo-index.android")
                 .addPackage(new MainReactPackage())
+                .addPackage(new MixiPackage())
                 .setUseDeveloperSupport(BuildConfig.DEBUG)
                 .setInitialLifecycleState(LifecycleState.RESUMED)
                 .build();
@@ -76,6 +73,12 @@ public class MixiActivity extends AppCompatActivity implements DefaultHardwareBa
         }
     }
 
+
+    private void sendKerkerEvent() {
+        mReactInstanceManager.getCurrentReactContext()
+                .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
+                .emit(MixiModule.KERKER_EVENT, null);
+    }
 
 
     @Override

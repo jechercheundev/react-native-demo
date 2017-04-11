@@ -7,14 +7,20 @@ import {
   Button,
   View
 } from 'react-native';
-
+import { DeviceEventEmitter } from 'react-native';
+import Mixi from '../mixi.js'
 
 class KerKer extends React.Component {
 
 
+  componentWillMount() {
+    console.log("listening to : " + Mixi.kerkerEvent)
+    DeviceEventEmitter.addListener(Mixi.kerkerEvent, (e: Event) => {
+      this.props.onKerKerPress();
+    });
+  }
+
   renderToast() {
-    console.log("props")
-    console.log(this.props)
     if (this.props.toastEnabled) {
       return (
         <Button

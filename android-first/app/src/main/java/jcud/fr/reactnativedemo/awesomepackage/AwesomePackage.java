@@ -1,4 +1,4 @@
-package jcud.fr.reactnativedemo;
+package jcud.fr.reactnativedemo.awesomepackage;
 
 import com.facebook.react.ReactPackage;
 import com.facebook.react.bridge.JavaScriptModule;
