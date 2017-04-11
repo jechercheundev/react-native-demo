@@ -1,3 +1,5 @@
+
+
 import React, { PropTypes, Component }  from 'react'
 import {
   StyleSheet,
@@ -28,6 +30,10 @@ class KerKer extends React.Component {
           }} >
           #Kerker { kerker }
         </Text>
+        <Button
+          title="Toast !"
+          onPress = {this.props.onToastPress}
+          />
       </View>
     )
   }

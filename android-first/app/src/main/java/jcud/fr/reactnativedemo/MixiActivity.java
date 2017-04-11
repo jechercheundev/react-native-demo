@@ -16,10 +16,14 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
 import com.facebook.react.ReactInstanceManager;
+import com.facebook.react.ReactPackage;
 import com.facebook.react.ReactRootView;
 import com.facebook.react.common.LifecycleState;
 import com.facebook.react.modules.core.DefaultHardwareBackBtnHandler;
 import com.facebook.react.shell.MainReactPackage;
+
+import java.util.Arrays;
+import java.util.List;
 
 public class MixiActivity extends AppCompatActivity implements DefaultHardwareBackBtnHandler {
     private static final int OVERLAY_PERMISSION_REQ_CODE = 1337;
@@ -52,14 +56,13 @@ public class MixiActivity extends AppCompatActivity implements DefaultHardwareBa
                 .setBundleAssetName("demo-index.android.bundle")
                 .setJSMainModuleName("src-react-native/demo-index.android")
                 .addPackage(new MainReactPackage())
+                .addPackage(new AwesomePackage()) // <-- Add your custom package here !
                 .setUseDeveloperSupport(BuildConfig.DEBUG)
                 .setInitialLifecycleState(LifecycleState.RESUMED)
                 .build();
         mReactRootView.startReactApplication(mReactInstanceManager, "demo", null);
 
         FrameLayout frameLayout = (FrameLayout) findViewById(R.id.reactContainer);
-//        ViewGroup.LayoutParams params = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
-//        mReactRootView.setLayoutParams(params);
         frameLayout.addView(mReactRootView);
 
 
