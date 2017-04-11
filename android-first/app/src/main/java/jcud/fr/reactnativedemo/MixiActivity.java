@@ -56,7 +56,6 @@ public class MixiActivity extends AppCompatActivity implements DefaultHardwareBa
                 .setBundleAssetName("demo-index.android.bundle")
                 .setJSMainModuleName("src-react-native/demo-index.android")
                 .addPackage(new MainReactPackage())
-                .addPackage(new AwesomePackage()) // <-- Add your custom package here !
                 .setUseDeveloperSupport(BuildConfig.DEBUG)
                 .setInitialLifecycleState(LifecycleState.RESUMED)
                 .build();
@@ -76,6 +75,7 @@ public class MixiActivity extends AppCompatActivity implements DefaultHardwareBa
             }
         }
     }
+
 
 
     @Override
@@ -106,7 +106,8 @@ public class MixiActivity extends AppCompatActivity implements DefaultHardwareBa
         super.onDestroy();
 
         if (mReactInstanceManager != null) {
-            mReactInstanceManager.onHostDestroy();
+            mReactInstanceManager.onHostDestroy(this);
+//            mReactInstanceManager.destroy();
         }
     }
 

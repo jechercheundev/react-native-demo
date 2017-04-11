@@ -11,8 +11,14 @@ const getKerkerTime = (stateKerkerTime) => {
 
 
 const mapStateToProps = (state, props) => {
+  let toastEnabled = false
+  if (ToastAndroid) {
+    toastEnabled = true;
+  }
+  console.log("Toast Android " + ToastAndroid);
   return {
-    kerkerTime: getKerkerTime(state.kerkerReducer.kerkerTime)
+    kerkerTime: getKerkerTime(state.kerkerReducer.kerkerTime),
+    toastEnabled: toastEnabled
   }
 }
 

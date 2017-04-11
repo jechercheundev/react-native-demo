@@ -24,6 +24,12 @@ public class ToastModule extends ReactContextBaseJavaModule {
         return "ToastAndroid";
     }
 
+
+    @Override
+    public boolean canOverrideExistingModule() {
+        return true;
+    }
+
     @Override
     public Map<String, Object> getConstants() {
         final Map<String, Object> constants = new HashMap<>();

@@ -12,6 +12,20 @@ import {
 class KerKer extends React.Component {
 
 
+  renderToast() {
+    console.log("props")
+    console.log(this.props)
+    if (this.props.toastEnabled) {
+      return (
+        <Button
+          title="Toast !"
+          onPress = {this.props.onToastPress}
+          />
+      )
+    } else {
+      return null;
+    }
+  }
 
   render() {
     console.log('kerker render - kerkerTime = ' + this.props.kerkerTime)
@@ -30,10 +44,7 @@ class KerKer extends React.Component {
           }} >
           #Kerker { kerker }
         </Text>
-        <Button
-          title="Toast !"
-          onPress = {this.props.onToastPress}
-          />
+        {this.renderToast()}
       </View>
     )
   }
