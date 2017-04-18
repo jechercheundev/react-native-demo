@@ -9,8 +9,6 @@
 
 #import <React/RCTEventEmitter.h>
 
-extern NSString *const RCTRemoteNotificationReceived;
-
 @interface RCTPushNotificationManager : RCTEventEmitter
 
 typedef void (^RCTRemoteNotificationCallback)(UIBackgroundFetchResult result);

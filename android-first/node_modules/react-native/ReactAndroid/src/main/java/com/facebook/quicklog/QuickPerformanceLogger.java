@@ -85,21 +85,9 @@ public class QuickPerformanceLogger {
       String tag) {
   }
 
-  public void markerAnnotate(
-    int markerId,
-    String annotationKey,
-    String annotationValue) {
-  }
-
-  public void markerAnnotate(
-    int markerId,
-    int instanceKey,
-    String annotationKey,
-    String annotationValue) {
-  }
-
   public long currentMonotonicTimestamp() {
     return 0L;
   }
 
 }
+

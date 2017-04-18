@@ -28,6 +28,6 @@ dependencies {
 //    })
     // From node_modules.
     compile 'com.android.support:appcompat-v7:25.2.0'
-    compile 'com.facebook.react:react-native:0.43.+'
+    compile 'com.facebook.react:react-native:0.42.+'
     compile 'com.android.support:design:25.2.0'
 }

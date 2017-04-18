@@ -20,12 +20,7 @@ function traverseOwnerTreeUp(hierarchy, instance) {
 }
 
 function findInstanceByNativeTag(nativeTag) {
-  var instance = ReactNativeComponentTree.getInstanceFromNode(nativeTag);
-  if (!instance || typeof instance.tag === 'number') {
-    // TODO(sema): We've disabled the inspector when using Fiber. Fix #15953531
-    return null;
-  }
-  return instance;
+  return ReactNativeComponentTree.getInstanceFromNode(nativeTag);
 }
 
 function getOwnerHierarchy(instance) {

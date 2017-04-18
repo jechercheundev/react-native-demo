@@ -28,10 +28,8 @@ public class LayoutEventsTestCase extends ReactAppInstrumentationTestCase {
    * Creates a UI in JS and verifies the onLayout handler is called.
    */
   public void testOnLayoutCalled() {
-    assertEquals(3, mStringRecordingModule.getCalls().size());
+    assertEquals(1, mStringRecordingModule.getCalls().size());
     assertEquals("10,10-100x100", mStringRecordingModule.getCalls().get(0));
-    assertEquals("10,10-50x50", mStringRecordingModule.getCalls().get(1));
-    assertEquals("0,0-50x50", mStringRecordingModule.getCalls().get(2));
   }
 
   @Override

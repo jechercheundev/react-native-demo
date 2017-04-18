@@ -26,10 +26,13 @@
             android:name=".MixiActivity"
             android:label="@string/title_activity_mixi"
             android:parentActivityName=".HelloActivity"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="jcud.fr.reactnativedemo.HelloActivity"/>
+        </activity>
+        <activity android:name=".BBLActivity"
+                  android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         </activity>
     </application>
 

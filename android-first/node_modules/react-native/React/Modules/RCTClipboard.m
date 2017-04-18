@@ -9,6 +9,8 @@
 
 #import "RCTClipboard.h"
 
+#import "RCTUtils.h"
+
 #import <UIKit/UIKit.h>
 
 @implementation RCTClipboard

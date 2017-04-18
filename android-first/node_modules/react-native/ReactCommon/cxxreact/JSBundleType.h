@@ -27,14 +27,16 @@ enum struct ScriptTag {
  * 4 bytes, for BC bundles this is 12 bytes. This structure holds the first 12
  * bytes from a bundle in a way that gives access to that information.
  */
-struct __attribute__((packed)) BundleHeader {
+union BundleHeader {
   BundleHeader() {
     std::memset(this, 0, sizeof(BundleHeader));
   }
 
-  uint32_t magic;
-  uint32_t reserved_;
-  uint32_t version;
+  uint32_t RAMMagic;
+  struct {
+    uint64_t BCMagic;
+    uint32_t BCVersion;
+  };
 };
 
 /**

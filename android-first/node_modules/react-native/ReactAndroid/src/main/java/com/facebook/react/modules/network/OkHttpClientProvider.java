@@ -45,7 +45,7 @@ public class OkHttpClientProvider {
     sClient = client;
   }
 
-  public static OkHttpClient createClient() {
+  private static OkHttpClient createClient() {
     // No timeouts by default
     OkHttpClient.Builder client = new OkHttpClient.Builder()
       .connectTimeout(0, TimeUnit.MILLISECONDS)

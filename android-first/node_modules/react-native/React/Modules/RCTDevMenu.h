@@ -20,34 +20,48 @@
 @interface RCTDevMenu : NSObject
 
 /**
- * Deprecated, use RCTDevSettings instead.
+ * Is the menu enabled. The menu is enabled by default if RCT_DEV=1, but
+ * you may wish to disable it so that you can provide your own shake handler.
  */
-@property (nonatomic, assign) BOOL shakeToShow DEPRECATED_ATTRIBUTE;
+@property (nonatomic, assign) BOOL shakeToShow;
 
 /**
- * Deprecated, use RCTDevSettings instead.
+ * Enables performance profiling.
  */
-@property (nonatomic, assign) BOOL profilingEnabled DEPRECATED_ATTRIBUTE;
+@property (nonatomic, assign) BOOL profilingEnabled;
 
 /**
- * Deprecated, use RCTDevSettings instead.
+ * Enables starting of profiling sampler on launch
  */
-@property (nonatomic, assign) BOOL liveReloadEnabled DEPRECATED_ATTRIBUTE;
+@property (nonatomic, assign) BOOL startSamplingProfilerOnLaunch;
 
 /**
- * Deprecated, use RCTDevSettings instead.
+ * Enables automatic polling for JS code changes. Only applicable when
+ * running the app from a server.
  */
-@property (nonatomic, assign) BOOL hotLoadingEnabled DEPRECATED_ATTRIBUTE;
+@property (nonatomic, assign) BOOL liveReloadEnabled;
+
+/**
+ * Enables hot loading. Currently not supported in open source.
+ */
+@property (nonatomic, assign) BOOL hotLoadingEnabled;
+
+/**
+ * Shows the FPS monitor for the JS and Main threads.
+ */
+@property (nonatomic, assign) BOOL showFPS;
 
 /**
  * Presented items in development menu
  */
 @property (nonatomic, copy, readonly) NSArray<RCTDevMenuItem *> *presentedItems;
 
+
 /**
  * Detect if actions sheet (development menu) is shown
  */
 - (BOOL)isActionSheetShown;
+
 
 /**
  * Manually show the dev menu (can be called from JS).
@@ -55,9 +69,10 @@
 - (void)show;
 
 /**
- * Deprecated, use -[RCTBRidge reload] instead.
+ * Manually reload the application. Equivalent to calling [bridge reload]
+ * directly, but can be called from JS.
  */
-- (void)reload DEPRECATED_ATTRIBUTE;
+- (void)reload;
 
 /**
  * Deprecated. Use the `-addItem:` method instead.
@@ -73,8 +88,6 @@
 
 @end
 
-typedef NSString *(^RCTDevMenuItemTitleBlock)(void);
-
 /**
  * Developer menu item, used to expose additional functionality via the menu.
  */
@@ -85,16 +98,18 @@ typedef NSString *(^RCTDevMenuItemTitleBlock)(void);
  * action.
  */
 + (instancetype)buttonItemWithTitle:(NSString *)title
-                            handler:(dispatch_block_t)handler;
+                            handler:(void(^)(void))handler;
 
 /**
- * This creates an item with a simple push-button interface, used to trigger an
- * action. getTitleForPresentation is called each time the item is about to be
- * presented, and should return the item's title.
+ * This creates an item with a toggle behavior. The key is used to store the
+ * state of the toggle. For toggle items, the handler will be called immediately
+ * after the item is added if the item was already selected when the module was
+ * last loaded.
  */
-+ (instancetype)buttonItemWithTitleBlock:(RCTDevMenuItemTitleBlock)titleBlock
-                                 handler:(dispatch_block_t)handler;
-
++ (instancetype)toggleItemWithKey:(NSString *)key
+                            title:(NSString *)title
+                    selectedTitle:(NSString *)selectedTitle
+                          handler:(void(^)(BOOL selected))handler;
 @end
 
 /**

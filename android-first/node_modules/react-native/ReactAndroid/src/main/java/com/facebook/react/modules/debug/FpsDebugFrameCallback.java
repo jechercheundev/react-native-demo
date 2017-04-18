@@ -14,8 +14,10 @@ import javax.annotation.Nullable;
 import java.util.Map;
 import java.util.TreeMap;
 
+import android.annotation.TargetApi;
+import android.view.Choreographer;
+
 import com.facebook.react.bridge.ReactContext;
-import com.facebook.react.modules.core.ChoreographerCompat;
 import com.facebook.react.uimanager.UIManagerModule;
 import com.facebook.infer.annotation.Assertions;
 
@@ -28,8 +30,11 @@ import com.facebook.infer.annotation.Assertions;
  * Also records the JS FPS, i.e. the frames per second with which either JS updated the UI or was
  * idle and not trying to update the UI. This is different from the FPS above since JS rendering is
  * async.
+ *
+ * TargetApi 16 for use of Choreographer.
  */
-public class FpsDebugFrameCallback extends ChoreographerCompat.FrameCallback {
+@TargetApi(16)
+public class FpsDebugFrameCallback implements Choreographer.FrameCallback {
 
   public static class FpsInfo {
 
@@ -61,7 +66,7 @@ public class FpsDebugFrameCallback extends ChoreographerCompat.FrameCallback {
 
   private static final double EXPECTED_FRAME_TIME = 16.9;
 
-  private final ChoreographerCompat mChoreographer;
+  private final Choreographer mChoreographer;
   private final ReactContext mReactContext;
   private final UIManagerModule mUIManagerModule;
   private final DidJSUpdateUiDuringFrameDetector mDidJSUpdateUiDuringFrameDetector;
@@ -76,7 +81,7 @@ public class FpsDebugFrameCallback extends ChoreographerCompat.FrameCallback {
   private boolean mIsRecordingFpsInfoAtEachFrame = false;
   private @Nullable TreeMap<Long, FpsInfo> mTimeToFps;
 
-  public FpsDebugFrameCallback(ChoreographerCompat choreographer, ReactContext reactContext) {
+  public FpsDebugFrameCallback(Choreographer choreographer, ReactContext reactContext) {
     mChoreographer = choreographer;
     mReactContext = reactContext;
     mUIManagerModule = reactContext.getNativeModule(UIManagerModule.class);

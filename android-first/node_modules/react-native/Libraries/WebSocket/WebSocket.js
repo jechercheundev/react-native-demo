@@ -83,8 +83,8 @@ class WebSocket extends EventTarget(...WEBSOCKET_EVENTS) {
 
     this._eventEmitter = new NativeEventEmitter(RCTWebSocketModule);
     this._socketId = nextWebSocketId++;
-    this._registerEvents();
     RCTWebSocketModule.connect(url, protocols, options, this._socketId);
+    this._registerEvents();
   }
 
   close(code?: number, reason?: string): void {

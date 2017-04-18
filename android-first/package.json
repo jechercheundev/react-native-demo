@@ -4,8 +4,8 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
-    "react": "16.0.0-alpha.6",
-    "react-native": "^0.43",
+    "react": "^15.5.4",
+    "react-native": "^0.42",
     "react-native-i18n": "^1.0.0",
     "react-native-simple-router": "^0.12.0",
     "react-redux": "^5.0.2",

@@ -19,7 +19,8 @@
     <LinearLayout
         android:layout_centerInParent="true"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:id="@+id/middeul">
 
         <Button
             android:layout_width="wrap_content"
@@ -40,4 +41,15 @@
             android:id="@+id/enterTheAwesome"
             />
     </LinearLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter the BBL"
+        android:backgroundTint="@color/colorPrimary"
+        android:textColor="@android:color/white"
+        android:id="@+id/enterTheBBL"
+        android:layout_below="@id/middeul"
+        android:layout_centerHorizontal="true"
+        />
 </RelativeLayout>

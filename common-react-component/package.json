@@ -5,9 +5,9 @@
   "license": "MIT",
   "dependencies": {
     "react": "^15.5.4",
-    "react-native": "^0.43.3"
+    "react-native": "^0.42"
   },
-  "scripts": {    
+  "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start"
   }
 }

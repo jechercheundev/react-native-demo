@@ -25,5 +25,12 @@ public class HelloActivity extends AppCompatActivity {
                 startActivity(service);
             }
         });
+        findViewById(R.id.enterTheBBL).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent service = new Intent(HelloActivity.this, BBLActivity.class);
+                startActivity(service);
+            }
+        });
     }
 }
