@@ -13,7 +13,7 @@ class App extends Component {
   render() {
       return (
         <View>
-          <Text>Bonjour !</Text>
+          <Text>Bonjour Les gens du BBL {'<'}3</Text>
         </View>
       )
   }
