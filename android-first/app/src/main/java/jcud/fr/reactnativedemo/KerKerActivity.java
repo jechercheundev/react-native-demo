@@ -15,6 +15,8 @@ import com.facebook.react.common.LifecycleState;
 import com.facebook.react.modules.core.DefaultHardwareBackBtnHandler;
 import com.facebook.react.shell.MainReactPackage;
 
+import jcud.fr.reactnativedemo.mixipackage.MixiPackage;
+
 public class KerKerActivity extends Activity implements DefaultHardwareBackBtnHandler {
     private static final int OVERLAY_PERMISSION_REQ_CODE = 1337;
     private ReactRootView mReactRootView;
@@ -30,6 +32,7 @@ public class KerKerActivity extends Activity implements DefaultHardwareBackBtnHa
                 .setBundleAssetName("demo-index.android.bundle")
                 .setJSMainModuleName("src-react-native/demo-index.android")
                 .addPackage(new MainReactPackage())
+                .addPackage(new MixiPackage())
                 .setUseDeveloperSupport(BuildConfig.DEBUG)
                 .setInitialLifecycleState(LifecycleState.RESUMED)
                 .build();

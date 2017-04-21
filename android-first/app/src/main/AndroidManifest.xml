@@ -31,9 +31,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="jcud.fr.reactnativedemo.HelloActivity"/>
         </activity>
-        <activity android:name=".BBLActivity"
-                  android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        </activity>
     </application>
 
 </manifest>
